@@ -11,15 +11,35 @@
     <div class="container">
         <div class="todo-app">
             <h2 data-text="To-Do List">To-Do List <img src="images/checklist.png"></h2>
-            <div class="row">
-                <input type="text" id="input-box" placeholder="Add your text">
-                <a class="button" onclick="addTask()">Add</a>
+
+            <!--New Code-->
+
+            <div class="search_bar">
+                <div class="input_box">
+
+                    <input type="text" id="input-box" class="input">
+
+                    <!-- Placeholder -->
+
+                    <div class="placeholder">
+                        <div class="box">
+                            <p>Add Your</p>
+                        </div>
+                        <div class="slider_box">
+                            <div class="slider"></div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <a class="button" onclick="addTask()">Add
+                        </a>
+                    </div>
+                </div>
+                <ul id="list-container"></ul>
             </div>
-            <ul id="list-container"></ul>
         </div>
-    </div>
-    <script src="script.js"></script>
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+        <script src="script.js"></script>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </body>
 
 </html>
