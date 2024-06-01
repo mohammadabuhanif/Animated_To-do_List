@@ -1,6 +1,6 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
-
+// add task onclick
 function addTask() {
     if (inputBox.value === '') {
         alert("You must write something!");
@@ -38,28 +38,52 @@ function showTask() {
 
 showTask();
 
-let buttons = document.querySelectorAll(".button");
+let input = document.querySelector(".input");
+let slider_box = document.querySelector(".slider_box");
+let slider = document.querySelector(".slider");
+let placeholder = document.querySelector(".placeholder");
 
-for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", (e) => {
-        e.preventDefault(); // preventing form submitting
+let list = ["Fitness Routine", "Groceries", "Events", "Pomodoro"];
+let i = 0;
+text_animation()
+let intervals = "";
+setintervals();
 
-        let overlay = document.createElement('span'); //creating a tag(span)
-        overlay.classList.add("overlay"); //adding a class inside the span
+// This below javascript line is give height to slider_box class. It won't get its inner element height (slider class), because it set to position absolute.
+slider_box.style.height = slider.clientHeight + "px";
 
-        //adding overlay tag inside the anchor tag at in HTML
+input.onfocus = function () {
+    placeholder.style.display = "none";
+    clearInterval(intervals);
+}
+input.onblur = function () {
+    if (input.value == "") {
+        placeholder.style.display = "flex";
+        i = 0;
+        text_animation();
+        setintervals();
+    }
+}
 
-        let x = e.clientX - e.target.offsetLeft; //by this we get perfect value where we will click
-        let y = e.clientY - e.target.offsetTop;
+// Functionality to animate the text;
 
-        overlay.style.left = x + "px"; //changing the position of the overlay according to our clicks on the button
-        overlay.style.top = y + "px";
+function setintervals() {
+    intervals = setInterval(() => {
+        text_animation();
+    }, 2500);
+}
 
-        e.target.appendChild(overlay);
 
-        setTimeout(() => {
-            overlay.remove();
-        }, 500); //
-
-    });
+function text_animation() {
+    i++;
+    slider.innerHTML = list[i - 1];
+    slider.style.opacity = "1";
+    slider.style.left = "10px";
+    setTimeout(() => {
+        slider.style.opacity = "0";
+        slider.style.left = "5px";
+    }, 2000);
+    if (list.length == i) {
+        i = 0;
+    }
 }
