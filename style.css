@@ -148,6 +148,7 @@ ul li {
     font-size: 17px;
     padding: 12px 8px 12px 50px;
     user-select: none;
+    top: 50px;
     cursor: pointer;
     position: relative;
 }
@@ -189,4 +190,37 @@ ul li span {
 
 ul li span:hover {
     background: #edeef0;
+}
+
+ul li.dragging {
+    opacity: 1;
+    border: 2px double #DDDDDD;
+    border-radius: 30px;
+}
+
+button {
+    position: relative;
+    padding: 10px 10px;
+    font-size: 16px;
+    top: 20px;
+    left: 15px;
+    background-color: #007bff;
+    color: #fff;
+    align-items: center;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+i {
+    position: relative;
+    letter-spacing: 5px;
+    font-size: 25px;
+    align-items: center;
+    top: 3px;
 }
