@@ -3,9 +3,12 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shrotcut icon" type="x-icon" href="images/checklist.png">
+    <link rel="shortcut icon" type="image/png" href="images/checklist.png">
     <title>To-Do List App - by Versatile Era</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -31,11 +34,18 @@
                         </div>
                     </div>
                     <div class="buttons">
-                        <a class="button" onclick="addTask()">Add
-                        </a>
+                        <a class="button" onclick="addTask()">Add</a>
                     </div>
                 </div>
-                <ul id="list-container"></ul>
+                <div>
+                    <button onclick="authenticateWithGoogle()"><i class="fa-brands fa-google-drive"></i>Add
+                        Backup</button>
+                </div>
+                <div>
+                    <ul id="list-container">
+                        <!-- Task items will be dynamically added here -->
+                    </ul>
+                </div>
             </div>
         </div>
 
